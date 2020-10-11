@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: restapi
+  name: restapi
+  namespace: restapi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: restapi
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: restapi
+    spec:
+      containers:
+      - image: viveksinghggits/library:0.1.0
+        name: library
+        resources: {}
+        env:
+        - name: DB_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: restapi-cm
+              key: host
+        - name: DB_NAME
+          valueFrom:
+            configMapKeyRef:
+              name: restapi-cm
+              key: dbname
+        - name: DB_PASS
+          valueFrom:
+            secretKeyRef:
+              name: mysql-password
+              key: rootpassword
+status: {}
