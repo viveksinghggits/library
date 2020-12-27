@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  Library:
+  - apiVersion: v2
+    appVersion: 0.0.1
+    created: "2020-12-27T16:52:23.567469168+05:30"
+    description: A Helm chart to deploy viveksinghggits/library application
+    digest: 8c96d6cda4178603a12d670e9ac1e8cc9bfcac01ea0ffa8277453d14e8452691
+    name: Library
+    type: application
+    urls:
+    - Library-0.1.0.tgz
+    version: 0.1.0
+generated: "2020-12-27T16:52:23.566841386+05:30"
